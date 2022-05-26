@@ -1,6 +1,6 @@
 # WinPass11: Auto
 
-***DISCLAIMER: WinPass no longer works and will no longer be receiving updates!***
+It's back!
 
 *NOTE: You need to be in the Windows Insider Release Preview channel **BEFORE** using WinPass. WinPass does not enroll you in insiders, it changes your channel while bypassing restrictions.*
 
