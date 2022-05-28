@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 using WinPass11.Helpers;
 
 namespace WinPass11
@@ -154,10 +149,47 @@ namespace WinPass11
                     Utils.ShowMessageBox(Strings.Body.InstallationCanceled, MessageBoxType.Information);
                 }
             }
+            else if (selectionBox.Text == "Release")
+            {
+                release();
+
+            }
             else
             {
                 Utils.ShowMessageBox(Strings.Body.InvalidChannel, MessageBoxType.Error);
             }
+        }
+        private async void release()
+        {
+            Utils.ShowMessageBox("This option will require you to download an ISO file from https://www.microsoft.com/en-us/software-download/windows11", MessageBoxType.Information);
+            openFileDialog1.Filter = "Windows ISO (*.iso)|*.iso|All files (*.*)|*.*"; // get file
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+                await Task.Run(() => Utils.ExtractISO(openFileDialog1.FileName, $@"{mTempWorkingDir}\ISO\")); // ISO extractor
+
+                string[] pathparser1 = openFileDialog1.FileName.Split('\\');
+                string extractdir = mTempWorkingDir + "\\ISO\\" + pathparser1[pathparser1.Length - 1].Remove(pathparser1[pathparser1.Length - 1].Length - 4, 4) + "\\"; // hellish filepath parsing
+
+                File.Delete($"{extractdir}\\Sources\\appraiserres.dll"); // File Replacing
+                Utils.DownloadFile(Constants.Url.AppraiserRes, $"{extractdir}\\Sources\\appraiserres.dll");
+
+                Utils.ShowMessageBox("Continue Setup in Windows 11 Installer", MessageBoxType.Information);
+                Utils.StartProcess($"{extractdir}\\Setup.exe", "");
+
+                Utils.ShowMessageBox("VERY IMPORTANT!\r\n\r\nPlease Click \"Change how setup downloads updates\" and click \"Not Now\"", MessageBoxType.Information);
+
+            }
+        }
+        private void selectionBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }

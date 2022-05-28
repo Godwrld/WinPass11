@@ -33,6 +33,7 @@
             this.selectionBoxLabel = new System.Windows.Forms.Label();
             this.selectionBox = new System.Windows.Forms.ComboBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +94,10 @@
             this.mainPanel.Size = new System.Drawing.Size(313, 104);
             this.mainPanel.TabIndex = 9;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +123,7 @@
         private System.Windows.Forms.Label selectionBoxLabel;
         private System.Windows.Forms.ComboBox selectionBox;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
