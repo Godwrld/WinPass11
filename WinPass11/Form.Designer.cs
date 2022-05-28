@@ -75,7 +75,8 @@
             this.selectionBox.FormattingEnabled = true;
             this.selectionBox.Items.AddRange(new object[] {
             "Dev",
-            "Beta"});
+            "Beta",
+            "Release"});
             this.selectionBox.Location = new System.Drawing.Point(12, 69);
             this.selectionBox.Name = "selectionBox";
             this.selectionBox.Size = new System.Drawing.Size(121, 23);
