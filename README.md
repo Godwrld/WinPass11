@@ -1,19 +1,11 @@
-# WinPass11: Auto
+# WinPass11: Auto DEVELOPER
 
-It's back!
+The next version of WinPass11!
+This branch is a complete rewrite of the original code
 
 *NOTE: You need to be in the Windows Insider Release Preview channel **BEFORE** using WinPass. WinPass does not enroll you in insiders, it changes your channel while bypassing restrictions.*
 
 🔑 [WinPass11](https://github.com/project-winpass11) is a tool for installing Windows 11 on unsupported hardware in a one click installer. Easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware.
-
-## Preview (Guided)
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ArkaneDev/WinPass11/main/RepoImage.png" />
-</p>
-
-## Installation
-* Download the [latest release](https://github.com/ArkaneDev/WinPass11/releases).
-* Execute the program named: `WinPass11Auto.exe`. You should be asked by UAC to run as administrator, if not, re-run as administrator.
 
 ## Contributing
 If you want to develop for WinPass11, take a look at CONTRIBUTING.md to see how to get your changes merged in.
